@@ -240,6 +240,9 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -260,6 +263,9 @@
   }
   .h-auto {
     height: auto;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -300,6 +306,18 @@
   .w-120 {
     width: calc(var(--spacing) * 120);
   }
+  .w-150 {
+    width: calc(var(--spacing) * 150);
+  }
+  .w-160 {
+    width: calc(var(--spacing) * 160);
+  }
+  .w-175 {
+    width: calc(var(--spacing) * 175);
+  }
+  .w-200 {
+    width: calc(var(--spacing) * 200);
+  }
   .w-\[30px\] {
     width: 30px;
   }
@@ -315,8 +333,14 @@
   .min-w-\[100px\] {
     min-width: 100px;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -422,6 +446,13 @@
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
@@ -516,11 +547,17 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
